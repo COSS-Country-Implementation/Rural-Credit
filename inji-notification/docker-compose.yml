@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  notification-service:
+    image: notification-service:latest
+    container_name: notification-service
+    ports:
+      - "8082:8082"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://43.204.212.203:5433/notification
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
+
+      # JPA Config
+      SPRING_JPA_HIBERNATE_DDL_AUTO: none
+      SPRING_JPA_SHOW_SQL: "false"
+      SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL: "false"
+
+      # Logging
+      LOGGING_LEVEL_ORG_NOTIFICATION: INFO
+      LOGGING_LEVEL_ORG_SPRINGFRAMEWORK: INFO
+
+      SERVER_PORT: 8082
+      SPRING_PROFILES_ACTIVE: default
+
+      FIREBASE_SERVICE_ACCOUNT_PATH: /app/service_account.json
+
+    volumes:
+      - /home/ubuntu/service_account.json:/app/service_account.json:ro
+
+    restart: always

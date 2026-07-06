@@ -1,0 +1,19 @@
+﻿{
+    "credentials_supported": [
+      {
+        "name": "CredentialType1",
+        "scope": "CredentialType1_vc_ldp",
+        "display": [
+          {
+            "name": "CredentialType1",
+            "locale": "en",
+            "logo": "https://logo"
+          }
+        ]
+      }
+    ],
+    "authorization_endpoint": "https://dev/authorize",
+    "grant_types_supported": [
+      "authorization_code"
+    ]
+}

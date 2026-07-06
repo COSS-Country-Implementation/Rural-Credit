@@ -1,0 +1,10 @@
+# Ignore sensitive and build files
+inji-sender-dtp-meu-imovel-rural-487c8e5dc36a.json
+service_account.json
+*.json
+target/
+*.log
+.idea/
+*.iml
+.DS_Store
+
